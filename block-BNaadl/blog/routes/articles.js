@@ -55,6 +55,23 @@ router.post("/:id", (req, res) => {
     });
 })
 
+// likes 
+router.get("/:id/likes", (req, res, next) => {
+    let id = req.params.id;
+    Article.findByIdAndUpdate(id, { $inc: { likes: 1 } }, (err, article) => {
+        if (err) return next(err);
+        res.redirect("/articles/" + id);
+    })
+})
+
+router.get("/:id/unlike", (req, res, next) => {
+    let id = req.params.id;
+    Article.findByIdAndUpdate(id, { $inc: { likes: -1 } }, (err, article) => {
+        if (err) return next(err);
+        res.redirect("/articles/" + id);
+    })
+})
+
 
 // Delete Single Article
 router.get("/:id/delete", (req, res, next) => {

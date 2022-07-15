@@ -3,8 +3,12 @@ body {
     font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
-a {
+.like-btn {
     color: #00b7ff;
+    background-color: black;
+    padding: 0.5rem;
+    font-size: 1.4rem;
+    margin-left: 1rem;
 }
 
 input {
