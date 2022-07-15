@@ -1,0 +1,42 @@
+body {
+    padding: 50px;
+    font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00b7ff;
+}
+
+input {
+    display: block;
+    margin: 1rem 0;
+    padding: 0.5rem;
+}
+
+.submit-btn {
+    border: none;
+    border-radius: 0.3rem;
+    color: white;
+    background-color: black;
+    padding: 0.9rem;
+}
+
+.submit-btn:hover {
+    background-color: #0f0d92;
+    color: rgb(211, 186, 186);
+    transition: 1s all ease-out;
+}
+
+.link {
+    display: inline-block;
+    background-color: burlywood;
+    color: black;
+    padding: 0.5rem;
+    margin: 0 0 0 1rem;
+}
+
+.link:hover {
+    background-color: black;
+    color: white;
+    transition: 0.5ms;
+}
