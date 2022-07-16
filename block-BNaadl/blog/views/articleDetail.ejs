@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Article Detail</title>
+</head>
+
+<body>
+    <h1>
+        <%= article.title%>
+    </h1>
+    <h2>
+        <%= article.author%>
+    </h2>
+    <p>
+        <%= article.description.substr(0,500) + "....." %>
+    </p>
+    <h3>
+        <%= article.tags%>
+    </h3>
+    <h4>
+        <%= article.author%>
+    </h4>
+    <p>
+        <%= article.likes %>
+    </p>
+    <a href="/articles/<%=article.id%>/likes" class="like-btn">
+        <i class="fas fa-thumbs-up like"></i>
+    </a>
+    <a href="/articles/<%=article.id%>/unlike" class="like-btn">
+        <i class="fas fa-thumbs-down like"></i>
+    </a>
+    <a class="link" href="/articles/<%= article.id%>/edit">Update article</a>
+    <a class="link" href="/articles/<%= article.id%>/delete">Delete article</a>
+    <a class="link" href="/articles">Article's List</a>
+    <a class="link" href="/articles/new">Add Article</a>
+</body>
+
+</html>
