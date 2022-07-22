@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Book Form</title>
+</head>
+
+<body>
+    <h1>Fill up the form to create a book</h1>
+    <form action="/books" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Title">
+        <textarea name="summary" placeholder="Summary" cols="18" rows="10"></textarea>
+        <input type="text" name="pages" placeholder="Pages">
+        <input type="text" name="publication" placeholder="Publication">
+        <input type="file" name="cover_image" placeholder="Add Image">
+
+        <h3>Choose one or more category</h3>
+        <input type="checkbox" name="category" class="inline-block" value="fiction">Fiction</input>
+        <input type="checkbox" name="category" class="inline-block" value="adventure">Adventure</input>
+        <input type="checkbox" name="category" class="inline-block" value="technology">Technology</input>
+        <input type="checkbox" name="category" class="inline-block" value="motivation">Motivation</input>
+
+        <select name="author">
+            <option value="Choose one author">Choose one author</option>
+            <% authors.forEach((author)=>{ %>
+                <option value="<%= author.name%>">
+                    <%= author.name %>
+                </option>
+                <% })%>
+        </select>
+        <input type="submit" class="links" value="Add Book">
+    </form>
+    <a href="/books" class="links">List of books</a>
+    <a href="/authors/new" class="links">Add An Author</a>
+</body>
+
+</html>
