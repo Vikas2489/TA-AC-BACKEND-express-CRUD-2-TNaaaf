@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Book Detail</title>
+</head>
+
+<body>
+    <a href="/books/new" class="links"> Add a book</a>
+    <h1>
+        <%= book.title%>
+    </h1>
+    <p>
+        <%= book.summary%>
+    </p>
+    <p>
+        <%= book.pages%>
+    </p>
+    <h3>
+        <%= book.publication%>
+    </h3>
+    <img src="/uploads/<%= book.cover_image%>">
+    <ul>
+        <%book.category.forEach(category=>{%>
+            <li>
+                <%= category%>
+            </li>
+            <%})%>
+    </ul>
+    <h2>
+        Author -
+        <a href="/authors/<%=book.author.id%>">
+            <%= book.author.name%>
+        </a>
+    </h2>
+    <hr>
+</body>
+
+</html>
