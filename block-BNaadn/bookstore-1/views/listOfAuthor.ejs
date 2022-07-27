@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>List Of Authors</title>
+</head>
+
+<body>
+    <a href="/books/new" class="links"> Add an book</a>
+    <a href="/authors/new" class="links"> Add an author</a>
+    <a href="/authors" class="links"> List of Author</a>
+    <h2> Names Of Author</h2>
+    <ul>
+        <%authors.forEach(author=>{%>
+            <li>
+                <a href="/authors/<%=author.id%>">
+                    <%= author.name%>
+                </a>
+            </li>
+            <% })%>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Update Author</title>
+</head>
+
+<body>
+    <h2>Edit the Author Form</h2>
+    <form action="/authors/<%=author.id%>" method="POST">
+        <input value="<%= author.name%>" type="text" name="name" placeholder="name">
+        <input value="<%= author.email%>" type="email" name="email" placeholder="email">
+        <input value="<%= author.country%>" type="text" name="country" placeholder="country">
+        <input type="submit" value="Update Author" class="links">
+    </form>
+    <a href="/books" class="links">Go to the list of books</a>
+</body>
+
+</html>

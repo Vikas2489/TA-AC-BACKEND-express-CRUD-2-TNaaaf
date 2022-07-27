@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Update Book</title>
+</head>
+
+<body>
+    <h1>Update the form to create a book</h1>
+    <form action="/books/<%=book.id%>" method="post" enctype="multipart/form-data">
+        <input value="<%=book.title%>" type="text" name="title" placeholder="Title">
+        <textarea name="summary" placeholder="Summary" cols="18" rows="10"><%=book.summary%></textarea>
+        <input value="<%=book.pages%>" type="text" name="pages" placeholder="Pages">
+        <input value="<%=book.publication%>" type="text" name="publication" placeholder="Publication">
+        <input value="<%=book.cover_image%>" type="file" name="cover_image" placeholder="Add Image">
+        <h3>Choose one or more category</h3>
+
+        <% book.category.forEach(category=>{%>
+            <% if(category==="fiction" ){%>
+                <input type="checkbox" class="inline-block" checked name="category" class="inline-block" value="fiction">Fiction</input>
+                <input type="checkbox" class="inline-block" name="category" class="inline-block" value="adventure">adventure</input>
+                <input type="checkbox" class="inline-block" name="category" class="inline-block" value="motivation">motivation</input>
+                <input type="checkbox" class="inline-block" name="category" class="inline-block" value="technology">technology</input>
+                <% } else if(category==="adventure" ){%>
+                    <input type="checkbox" class="inline-block" checked name="category" class="inline-block" value="adventure">adventure</input>
+                    <input type="checkbox" class="inline-block" name="category" class="inline-block" value="fiction">Fiction</input>
+                    <input type="checkbox" class="inline-block" name="category" class="inline-block" value="motivation">motivation</input>
+                    <input type="checkbox" class="inline-block" name="category" class="inline-block" value="technology">technology</input>
+                    <%} else if(category==="motivation" ){%>
+                        <input type="checkbox" class="inline-block" name="category" class="inline-block" value="technology">technology</input>
+                        <input type="checkbox" class="inline-block" name="category" class="inline-block" value="fiction">Fiction</input>
+                        <input type="checkbox" class="inline-block" name="category" class="inline-block" value="adventure">adventure</input>
+                        <input type="checkbox" class="inline-block" checked name="category" class="inline-block" value="motivation">motivation</input>
+                        <% } else {%>
+                            <input type="checkbox" class="inline-block" checked name="category" class="inline-block" value="technology">technology</input>
+                            <input type="checkbox" class="inline-block" name="category" class="inline-block" value="fiction">Fiction</input>
+                            <input type="checkbox" class="inline-block" name="category" class="inline-block" value="adventure">adventure</input>
+                            <input type="checkbox" class="inline-block" name="category" class="inline-block" value="motivation">motivation</input>
+                            <% } %>
+                                <%})%>
+                                    <input type="submit" class="links" value="Update Book">
+    </form>
+    <a href="/books" class="links">List of books</a>
+    <a href="/authors/new" class="links">Add An Author</a>
+</body>
+
+</html>

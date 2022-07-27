@@ -1,0 +1,39 @@
+body {
+    padding: 50px;
+    font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00b7ff;
+    text-decoration: none;
+    margin-top: 0.4rem;
+    display: inline-block;
+}
+
+input,
+select {
+    display: block;
+    margin: 1rem 0;
+    padding: 0.4rem;
+}
+
+.inline-block {
+    display: inline-block;
+    margin: 0 0.4rem;
+}
+
+.links {
+    background-color: black;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.links:hover {
+    background-color: rgb(32, 131, 224);
+    color: whitesmoke;
+}
+
+img {
+    width: 400px;
+}
