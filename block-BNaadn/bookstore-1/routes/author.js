@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
 var Author = require("../models/author");
+var Book = require("../models/books");
+
 
 // author form
 router.get("/new", (req, res, next) => {
@@ -55,7 +57,10 @@ router.get("/:id/delete", (req, res, next) => {
     let id = req.params.id;
     Author.findByIdAndDelete(id, (err, author) => {
         if (err) return next(err);
-        res.redirect("/authors");
+        Book.deleteMany({ id: author.books }, (err, deletedBook) => {
+            if (err) return next(err);
+            res.redirect("/authors");
+        })
     })
 })
 
